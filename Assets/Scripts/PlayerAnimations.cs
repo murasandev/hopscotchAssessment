@@ -35,7 +35,7 @@ public class PlayerAnimations : MonoBehaviour
         anim.SetBool("Run R", true);
     }
 
-    public void Jump()
+    public void JumpStart()
     {
         anim.SetBool("Jump", true);
     }
@@ -43,5 +43,10 @@ public class PlayerAnimations : MonoBehaviour
     public void JumpEnd()
     {
         anim.SetBool("Jump", false);
+    }
+
+    public void Slide()
+    {
+        anim.SetTrigger("Slide");
     }
 }

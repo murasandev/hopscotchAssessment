@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    public float speed;
-    public int jumpCounter = 1;
-    public float jumpForce = 10.0f;
-
     private Rigidbody rb;
- 
     private PlayerAnimations anim;
 
+    public float speed;
+    private float slideCD = 1.0f;
+    private bool canSlideBool = true;
+
+    #region Jump Variables
+    public int jumpCounter = 1;
+    public float jumpForce = 10.0f;
+    bool jumpKeyPressed;
+    #endregion
+
+    private float xConstraint = 3.0f;
     public bool gameOver;
 
     // Start is called before the first frame update
@@ -33,10 +39,19 @@ public class PlayerMovementController : MonoBehaviour
         if (!gameOver)
         {
             LateralMovement();
-            Jump();
+            Slide();
+            JumpInput();  
         }
     }
-    
+
+    private void FixedUpdate()
+    {
+        if (jumpKeyPressed)
+        {
+            Jump(); 
+        }
+    }
+
     void LateralMovement()
     {
         if (Input.GetKey(KeyCode.A))
@@ -57,32 +72,57 @@ public class PlayerMovementController : MonoBehaviour
     
     void LateralConstraint()
     {
-        if (transform.position.x >= 3.0f)
+        if (transform.position.x >= xConstraint)
         {
-            transform.position = new Vector3(3.0f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xConstraint, transform.position.y, transform.position.z);
         }
-        if (transform.position.x <= -3.0f)
+        if (transform.position.x <= -xConstraint)
         {
-            transform.position = new Vector3(-3.0f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-xConstraint, transform.position.y, transform.position.z);
         }
     }
 
-    void Jump()
-    {
+    #region Jump
+    void JumpInput()
+    {   
+        //Get Jump Input in Update
         if (Input.GetKeyDown(KeyCode.Space) && jumpCounter > 0)
         {
-            jumpCounter--;
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            anim.Jump();
+            jumpKeyPressed = true;
         }
+    }
+    void Jump()
+    {
+        //Do Jump in Fixed Update
+        jumpCounter--;
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        anim.JumpStart();
+        jumpKeyPressed = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            //When Grounded reset jump counter
             jumpCounter = 1;
             anim.JumpEnd();
         }
+    }
+    #endregion
+
+    void Slide()
+    {
+        if (Input.GetKeyDown(KeyCode.C) && canSlideBool)
+        {
+            anim.Slide();
+            Invoke("canSlide", slideCD);
+            canSlideBool = false;
+        }
+    }
+
+    void canSlide()
+    {
+        canSlideBool = true;
     }
 }
