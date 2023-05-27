@@ -9,8 +9,7 @@ public class Projectile : MonoBehaviour
     public float waitTime = 2f;
     private void Awake()
     {
-        _RB = GetComponent<Rigidbody>();        
-        
+        _RB = GetComponent<Rigidbody>();      
     }
 
     // Update is called once per frame
@@ -19,7 +18,7 @@ public class Projectile : MonoBehaviour
         waitTime -= Time.deltaTime;
         if (waitTime <= 0)
         {
-            _RB.velocity = new Vector3(0, 0, -speed);
+            _RB.velocity = new Vector3(0, -speed, 0);
         }
     }
     private void OnTriggerEnter(Collider other)
