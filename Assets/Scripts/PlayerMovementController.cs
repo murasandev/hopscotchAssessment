@@ -20,6 +20,8 @@ public class PlayerMovementController : MonoBehaviour
     #endregion
 
     private float xConstraint = 3.0f;
+    private float zTopConstraint = -2f;
+    private float zBotConstraint = 4f;
     public bool gameOver;
 
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class PlayerMovementController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        LateralConstraint();
+        PositionConstraint();
     }
 
     // Update is called once per frame
@@ -43,7 +45,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (!gameOver)
         {
-            LateralMovement();
+            Movement();
             Slide();
             JumpInput();  
         }
@@ -57,13 +59,25 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    void LateralMovement()
+    void Movement()
     {
+        //move forward
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector3.forward *Time.deltaTime * speed);
+        }
+        //move backward
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector3.back * Time.deltaTime * speed);
+        }
+        //move Left
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed);
             anim.RunLeft();
         }
+        //move Right
         else if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
@@ -75,8 +89,9 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
     
-    void LateralConstraint()
+    void PositionConstraint()
     {
+        //x constraints
         if (transform.position.x >= xConstraint)
         {
             transform.position = new Vector3(xConstraint, transform.position.y, transform.position.z);
@@ -84,6 +99,16 @@ public class PlayerMovementController : MonoBehaviour
         if (transform.position.x <= -xConstraint)
         {
             transform.position = new Vector3(-xConstraint, transform.position.y, transform.position.z);
+        }
+
+        //z constraints
+        if (transform.position.z <= zTopConstraint)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zTopConstraint);
+        }
+        if (transform.position.z >= zBotConstraint)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zBotConstraint);
         }
     }
 
