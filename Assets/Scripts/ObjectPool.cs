@@ -27,7 +27,7 @@ public class ObjectPool : MonoBehaviour
     {
         for (int i = 0; i < amountToPool; i++)
         {
-            //checks hierarchy for inactive snowballs to use
+            //checks hierarchy for inactive bombs to use
             if (!pooledObjects[i].activeInHierarchy)
             {
                 return pooledObjects[i];
