@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerCollisions : MonoBehaviour
 {
     private Rigidbody rb;
+    public HealthBar healthBarScript;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        //healthBarScript = GetComponent<HealthBar>();
     }
 
     // Update is called once per frame
@@ -17,15 +19,11 @@ public class PlayerCollisions : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        //missile 1
-
-        //missile 2
-
-        //missile 3
-
-        //rock obstacles
+        if (other.gameObject.CompareTag("Missile"))
+        {
+            healthBarScript.DamageTaken(50);
+        }
     }
 }

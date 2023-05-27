@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
@@ -8,8 +9,9 @@ public class PlayerMovementController : MonoBehaviour
     private PlayerAnimations anim;
 
     public float speed;
-    private float slideCD = 1.0f;
+    private float slideCD = 1.25f;
     private bool canSlideBool = true;
+    private bool isSliding;
 
     #region Jump Variables
     public int jumpCounter = 1;
@@ -26,7 +28,10 @@ public class PlayerMovementController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<PlayerAnimations>();
 
-        anim.RunForward();
+        if (anim != null)
+        {
+            anim.RunForward();
+        }
     }
     private void LateUpdate()
     {
@@ -82,11 +87,11 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    #region Jump
+    #region Jump Mechanics
     void JumpInput()
     {   
         //Get Jump Input in Update
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCounter > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCounter > 0 && !isSliding)
         {
             jumpKeyPressed = true;
         }
@@ -115,6 +120,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C) && canSlideBool)
         {
+            isSliding = true;
             anim.Slide();
             Invoke("canSlide", slideCD);
             canSlideBool = false;
@@ -124,5 +130,6 @@ public class PlayerMovementController : MonoBehaviour
     void canSlide()
     {
         canSlideBool = true;
+        isSliding = false;
     }
 }
