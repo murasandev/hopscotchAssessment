@@ -7,7 +7,7 @@ public class BombBarrage : MonoBehaviour
     private Rigidbody rb;
     public GameObject crosshairGO;
 
-    private Vector3 startPos = new Vector3(0, 10, 0);
+    private float startHeight = 10.0f;
     private float timeToActive = 3.0f;
     private float timer;
     private float resetTimer = 0;
@@ -32,13 +32,13 @@ public class BombBarrage : MonoBehaviour
     private void OnEnable()
     {
         timer = resetTimer;
+        transform.position = new Vector3(crosshairGO.transform.position.x, startHeight, crosshairGO.transform.position.z);
         activateBool = true;
     }
 
     private void OnDisable()
     {
         activateBool = false;
-        transform.position = startPos;
         rb.useGravity = false;
         ResetVelocity();
     }
