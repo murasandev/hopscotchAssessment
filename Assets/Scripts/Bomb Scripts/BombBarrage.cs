@@ -6,6 +6,7 @@ public class BombBarrage : MonoBehaviour
 {
     private Rigidbody rb;
     public GameObject crosshairGO;
+    public GameObject explosionPS;
 
     private float startHeight = 10.0f;
     private float timeToActive = 3.0f;
@@ -55,6 +56,7 @@ public class BombBarrage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        explosionPS.SetActive(true);
         crosshairGO.SetActive(false);
         this.gameObject.SetActive(false);
     }
