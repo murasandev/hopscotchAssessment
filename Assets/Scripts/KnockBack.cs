@@ -11,7 +11,6 @@ public class KnockBack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Blue Missile"))
         {
-            Debug.Log("Explode");
             Vector3 knockbackDirection = transform.position - other.gameObject.transform.position;
             knockbackDirection.Normalize();
 

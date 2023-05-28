@@ -10,7 +10,6 @@ public class OrangeMissileController : MonoBehaviour
 
     public float speed = 6;
     Rigidbody _RB;
-    public float waitTime = 2f;
 
     private float xMin = -3.0f, xMax = 3.0f;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActivateOrangeMissile : MonoBehaviour
 {
     public GameObject OrangeMissileGO;
-    private float timeMin = 3f, timeMax = 5.0f, fireTime, timer;
+    private float timeMin = 5f, timeMax = 7.0f, fireTime, timer;
 
     private void Awake()
     {

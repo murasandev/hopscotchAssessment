@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActivateBlueMissile : MonoBehaviour
 {
     public GameObject BlueMissileHolder;
-    private float timeMin = 1.5f, timeMax = 3f, fireTime, timer;
+    private float timeMin = 2f, timeMax = 4f, fireTime, timer;
 
     private void Awake()
     {

@@ -9,7 +9,6 @@ public class Projectile : MonoBehaviour
     public GameObject parentGO;
     public GameObject explosionPS;
     Rigidbody _RB;
-    public float waitTime = 2f;
     private float xMin = -3.0f, xMax = 3.0f;
 
     private void Awake()

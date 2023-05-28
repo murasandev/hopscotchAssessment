@@ -1785,19 +1785,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7690475344405124297, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
   m_PrefabInstance: {fileID: 7690475344026363090}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &733851678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733851675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f4062bf43384334ab88ed63cf1a8fab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missileGO: {fileID: 2100869415}
 --- !u!1 &787785531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5700773618419498054, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
@@ -3654,11 +3641,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063120211}
   m_CullTransparentMesh: 1
---- !u!1 &2100869415 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7691835069059740578, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
-  m_PrefabInstance: {fileID: 7690475344026363090}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2136129543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,21 +3848,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 923408189, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698018299, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3200634831451857165, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
       propertyPath: m_Size.x
-      value: 2.4401891
+      value: 1.6791036
       objectReference: {fileID: 0}
     - target: {fileID: 3200634831451857165, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
       propertyPath: m_Size.z
-      value: 1.9362426
+      value: 1.5839634
       objectReference: {fileID: 0}
     - target: {fileID: 3200634831451857165, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
       propertyPath: m_Center.x
-      value: -0.15172003
+      value: -0.097814545
       objectReference: {fileID: 0}
     - target: {fileID: 3200634831451857165, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
       propertyPath: m_Center.z
-      value: 0.8483697
+      value: 0.6722301
       objectReference: {fileID: 0}
     - target: {fileID: 5700773618419498048, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
       propertyPath: gameOver
@@ -3937,6 +3927,10 @@ PrefabInstance:
     - target: {fileID: 5700773618419498054, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
       propertyPath: m_Name
       value: Rock Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860109847986815642, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
+      propertyPath: m_Mass
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
@@ -4004,6 +3998,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8775308492650796920, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8775308493075007321, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
       propertyPath: m_Name
       value: BlueMissile
