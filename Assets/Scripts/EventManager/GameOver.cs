@@ -6,6 +6,7 @@ public class GameOver : MonoBehaviour
 {
     public bool gameOverBool;
     private bool setGameOverBool;
+    public bool winBool;
 
     public PlayerMovementController playerMovementControllerCS;
     public GameObject playerDeathPS;
@@ -23,6 +24,8 @@ public class GameOver : MonoBehaviour
     public ParticleSystem starPS;
     private ParticleSystem.MainModule mainModule;
 
+    public GameObject winScreen;
+    private bool setWinBool;
     public GameObject gameOverScreen;
     public MoveDownScreen terrainCS;
 
@@ -41,6 +44,7 @@ public class GameOver : MonoBehaviour
         }
     }
 
+    #region Used to stop rock obstacles moving, in ObstacleMoveDownScreen.cs
     public void SetGameOverBool()
     {
         if (setGameOverBool)
@@ -48,6 +52,15 @@ public class GameOver : MonoBehaviour
             gameOverBool = true;
         }
     }
+
+    public void SetWinBool()
+    {
+        if (setWinBool)
+        {
+            winBool = true;
+        }
+    }
+    #endregion
 
     public void endGame()
     {
@@ -77,5 +90,24 @@ public class GameOver : MonoBehaviour
         gameOverScreen.SetActive(true);
 
         gameOverBool = false;
+    }
+
+    public void winGame()
+    {
+        setWinBool = true;
+        winBool = true;
+
+        playerMovementControllerCS.gameOver = true;
+
+        terrainCS.enabled = false;
+
+        blueMissileObjPool.SetActive(false);
+        OrangeMissileObjPool.SetActive(false);
+        BombBarragePool.SetActive(false);
+
+        RockObstaclePool.SetActive(false);
+        mainModule.startSpeedMultiplier = 0f;
+
+        winScreen.SetActive(true);
     }
 }

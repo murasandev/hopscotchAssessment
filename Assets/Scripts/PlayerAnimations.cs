@@ -12,12 +12,6 @@ public class PlayerAnimations : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void RunForward()
     {
         anim.SetBool("Run", true);
@@ -48,5 +42,10 @@ public class PlayerAnimations : MonoBehaviour
     public void Slide()
     {
         anim.SetTrigger("Slide");
+    }
+
+    public void Win()
+    {
+        anim.SetTrigger("Win");
     }
 }

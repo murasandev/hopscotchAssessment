@@ -5,13 +5,20 @@ using UnityEngine;
 public class PlayerCollisions : MonoBehaviour
 {
     public PlayerMovementController playerMovementScript;
+    public PlayerAnimations PlayerAnimations;
     public HealthBar healthBarScript;
+    public GameOver gameOverCS;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Blue Missile") || other.gameObject.CompareTag("Missile"))
         {
             healthBarScript.DamageTaken(20);
+        }
+        if (other.gameObject.CompareTag("Win Box"))
+        {
+            gameOverCS.winGame();
+            PlayerAnimations.Win();
         }
     }
 

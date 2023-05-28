@@ -7,7 +7,6 @@ public class DeactivateExplosion : MonoBehaviour
     public DeactiveBombParent DeactiveBombParentCS;
     private float timeToActive = 3.0f;
     private float timer;
-    public bool deactivateBool;
 
     private void OnEnable()
     {

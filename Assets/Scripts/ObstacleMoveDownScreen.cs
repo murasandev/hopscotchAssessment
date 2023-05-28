@@ -11,8 +11,9 @@ public class ObstacleMoveDownScreen : MonoBehaviour
     void Update()
     {
         gameOver.SetGameOverBool();
+        gameOver.SetWinBool();
 
-        if (!gameOver.gameOverBool)
+        if (!gameOver.gameOverBool && !gameOver.winBool)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActivateBlueMissile : MonoBehaviour
 {
-    public GameObject BlueMissileGO;
+    public GameObject BlueMissileHolder;
     private float timeMin = 1.5f, timeMax = 3f, fireTime, timer;
 
     private void Awake()
@@ -31,10 +31,10 @@ public class ActivateBlueMissile : MonoBehaviour
     void FireMissile()
     {
         //activates inactive Bomb from hierarchy
-        BlueMissileGO = BlueMissileOP.SharedInstance.GetPooledObject();
-        if (BlueMissileGO != null)
+        BlueMissileHolder = BlueMissileOP.SharedInstance.GetPooledObject();
+        if (BlueMissileHolder != null)
         {
-            BlueMissileGO.SetActive(true);
+            BlueMissileHolder.SetActive(true);
         }
     }
 }

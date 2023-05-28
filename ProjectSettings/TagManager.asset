@@ -10,6 +10,7 @@ TagManager:
   - Rocks
   - Blue Missile
   - Orange Missile
+  - Win Box
   layers:
   - Default
   - TransparentFX
