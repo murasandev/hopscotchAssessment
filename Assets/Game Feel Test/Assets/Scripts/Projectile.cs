@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
         waitTime -= Time.deltaTime;
         if (waitTime <= 0)
         {
-            _RB.velocity = new Vector3(0, -speed, 0);
+            _RB.velocity = new Vector3(0, 0, -speed);
         }
     }
     private void OnTriggerEnter(Collider other)
