@@ -20,7 +20,7 @@ public class PlayerMovementController : MonoBehaviour
     bool jumpKeyPressed;
     #endregion
 
-    private float xConstraint = 3.5f;
+    private float xConstraint = 4f;
     private float zTopConstraint = -5f;
     private float zBotConstraint = 3f;
     public bool gameOver;

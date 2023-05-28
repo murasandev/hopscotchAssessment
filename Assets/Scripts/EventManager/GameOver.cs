@@ -5,9 +5,11 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     public bool gameOverBool;
+    private bool setGameOverBool;
 
     public PlayerMovementController playerMovementControllerCS;
     public GameObject playerDeathPS;
+    private bool playerDeathPSBool;
     public GameObject playerBodyGO;
     public GameObject playerFaceGO;
     public GameObject playerCrosshairGO;
@@ -39,13 +41,26 @@ public class GameOver : MonoBehaviour
         }
     }
 
+    public void SetGameOverBool()
+    {
+        if (setGameOverBool)
+        {
+            gameOverBool = true;
+        }
+    }
+
     public void endGame()
     {
         //called in HealthBar.cs
+        setGameOverBool = true;
         gameOverBool = true;
 
         playerMovementControllerCS.gameOver = true;
-        playerDeathPS.SetActive(true);
+        if (!playerDeathPSBool)
+        {
+            playerDeathPS.SetActive(true);
+            playerDeathPSBool = true;
+        }
         playerBodyGO.SetActive(false);
         playerFaceGO.SetActive(false);
         playerCrosshairGO.SetActive(false);
