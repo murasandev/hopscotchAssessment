@@ -9,7 +9,7 @@ public class KnockBack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Missile"))
+        if (other.gameObject.CompareTag("Blue Missile"))
         {
             Debug.Log("Explode");
             Vector3 knockbackDirection = transform.position - other.gameObject.transform.position;

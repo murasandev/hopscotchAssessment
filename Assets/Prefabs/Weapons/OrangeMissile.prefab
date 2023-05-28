@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7690475344405124302}
+  - component: {fileID: 733851677}
   m_Layer: 0
   m_Name: OrangeMissile
-  m_TagString: Untagged
+  m_TagString: Orange Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7690475344405124302
 Transform:
   m_ObjectHideFlags: 0
@@ -33,6 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &733851677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690475344405124297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d74d4aee6f3e67468c751ed03d11e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7690475342696617133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bab7d63219ec14ab821d780947cc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeactiveBombParentCS: {fileID: 0}
+  DeactiveBombParentCS: {fileID: 733851677}
   deactivateBool: 0
 --- !u!1001 &7690475344168896198
 PrefabInstance:
@@ -301,6 +314,10 @@ PrefabInstance:
     - target: {fileID: 1387215936877924, guid: b84df8667f779444bb25458df152e4e5, type: 3}
       propertyPath: m_Name
       value: Rocket22_Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387215936877924, guid: b84df8667f779444bb25458df152e4e5, type: 3}
+      propertyPath: m_TagString
+      value: Orange Missile
       objectReference: {fileID: 0}
     - target: {fileID: 4386349116631840, guid: b84df8667f779444bb25458df152e4e5, type: 3}
       propertyPath: m_RootOrder
@@ -412,5 +429,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPS: {fileID: 5440013104208930142}
+  parentGO: {fileID: 7690475344405124297}
   speed: 6
   waitTime: 2

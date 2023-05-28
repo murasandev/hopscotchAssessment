@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
-    private Rigidbody rb;
+    public PlayerMovementController playerMovementScript;
     public HealthBar healthBarScript;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        //healthBarScript = GetComponent<HealthBar>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Missile"))
+        if (other.gameObject.CompareTag("Blue Missile") || other.gameObject.CompareTag("Missile"))
         {
-            healthBarScript.DamageTaken(50);
+            healthBarScript.DamageTaken(20);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Orange Missile"))
+        {
+            //stop players abil to control movements
+            playerMovementScript.StopMovements();
+            healthBarScript.DamageTaken(10);
+            Invoke("ExplosionDamage", 1.0f);
+        }
+    }
+
+    private void ExplosionDamage()
+    {
+        healthBarScript.DamageTaken(20);
     }
 }

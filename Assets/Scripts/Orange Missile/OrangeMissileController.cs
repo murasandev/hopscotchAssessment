@@ -7,7 +7,6 @@ public class OrangeMissileController : MonoBehaviour
     private float inactiveTimer = 1f;
     public GameObject explosionPS;
     public GameObject parentGO;
-    public DeactiveBombParent DeactiveBombParentCS;
 
     public float speed = 6;
     Rigidbody _RB;

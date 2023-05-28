@@ -8,6 +8,8 @@ TagManager:
   - Missile
   - FxTemporaire
   - Rocks
+  - Blue Missile
+  - Orange Missile
   layers:
   - Default
   - TransparentFX

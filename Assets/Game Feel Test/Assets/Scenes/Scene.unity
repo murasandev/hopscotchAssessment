@@ -890,18 +890,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7690475344405124297, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
   m_PrefabInstance: {fileID: 7690475344026363090}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &733851677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733851675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d74d4aee6f3e67468c751ed03d11e92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &787785531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5700773618419498054, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
@@ -1565,25 +1553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 1583769516}
---- !u!1 &1584846974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4556181937538628044, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
-  m_PrefabInstance: {fileID: 8775308493744334064}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1643097419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584846974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40bab7d63219ec14ab821d780947cc17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeactiveBombParentCS: {fileID: 1747788715}
-  deactivateBool: 0
 --- !u!1 &1698018296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1959936186407716172, guid: cdbb6b8058932234bbc50d7512c067b8, type: 3}
@@ -1636,18 +1605,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8775308493075007321, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
   m_PrefabInstance: {fileID: 8775308493744334064}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1747788715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747788713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d74d4aee6f3e67468c751ed03d11e92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1763754904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08fcc6e91377954ab112a8ce004663d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovementScript: {fileID: 1799275579}
   healthBarScript: {fileID: 595100268}
 --- !u!114 &1799275599
 MonoBehaviour:
@@ -2519,21 +2477,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7690475342685827266, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
-      propertyPath: parentGO
-      value: 
-      objectReference: {fileID: 733851675}
-    - target: {fileID: 7690475343282739793, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
-      propertyPath: DeactiveBombParentCS
-      value: 
-      objectReference: {fileID: 733851677}
     - target: {fileID: 7690475344405124297, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
       propertyPath: m_Name
       value: OrangeMissile
-      objectReference: {fileID: 0}
-    - target: {fileID: 7690475344405124297, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7690475344405124302, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
       propertyPath: m_RootOrder
@@ -2579,10 +2525,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8255575733021555487, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
-      propertyPath: m_Intensity
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0496eb1ed9a6a44592f71449586b168, type: 3}
 --- !u!1001 &8775308493744334064
@@ -2592,25 +2534,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4556181937538628045, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
-      propertyPath: lengthInSec
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8775308492650796920, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
-      propertyPath: speed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8775308492650796920, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
-      propertyPath: parentGO
-      value: 
-      objectReference: {fileID: 1747788713}
     - target: {fileID: 8775308493075007321, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
       propertyPath: m_Name
       value: BlueMissile
-      objectReference: {fileID: 0}
-    - target: {fileID: 8775308493075007321, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8775308493075007322, guid: a7fa9336f33fa9e4c863f57232288448, type: 3}
       propertyPath: m_RootOrder

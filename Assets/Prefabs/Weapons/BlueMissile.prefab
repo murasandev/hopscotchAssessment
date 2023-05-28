@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8775308493075007322}
+  - component: {fileID: 1747788715}
   m_Layer: 0
   m_Name: BlueMissile
-  m_TagString: Missile
+  m_TagString: Blue Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8775308493075007322
 Transform:
   m_ObjectHideFlags: 0
@@ -33,6 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1747788715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775308493075007321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d74d4aee6f3e67468c751ed03d11e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8775308492369026580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934234919021330, guid: 517acb0350d861042ae93de85999a727, type: 3}
       propertyPath: m_TagString
-      value: Missile
+      value: Blue Missile
       objectReference: {fileID: 0}
     - target: {fileID: 4824944129422846, guid: 517acb0350d861042ae93de85999a727, type: 3}
       propertyPath: m_RootOrder
@@ -343,7 +356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a9079f83bd9de498057d88fc9f82e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 12
+  parentGO: {fileID: 8775308493075007321}
   explosionPS: {fileID: 4556181937538628044}
   waitTime: 3
 --- !u!4 &8780063062906266250 stripped
@@ -434,6 +448,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5112403345868107899, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
+      propertyPath: lengthInSec
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5112403347238810575, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -449,6 +467,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
   m_PrefabInstance: {fileID: 8775308493238749622}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1643097419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556181937538628044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bab7d63219ec14ab821d780947cc17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeactiveBombParentCS: {fileID: 1747788715}
+  deactivateBool: 0
 --- !u!4 &4556181937538628083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5112403345868107845, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}

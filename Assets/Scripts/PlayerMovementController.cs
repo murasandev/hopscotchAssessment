@@ -12,6 +12,7 @@ public class PlayerMovementController : MonoBehaviour
     private float slideCD = 1f;
     private bool canSlideBool = true;
     private bool isSliding;
+    private bool stopMovementBool;
 
     #region Jump Variables
     public int jumpCounter = 1;
@@ -43,7 +44,7 @@ public class PlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameOver)
+        if (!stopMovementBool)
         {
             Movement();
             Slide();
@@ -156,5 +157,16 @@ public class PlayerMovementController : MonoBehaviour
     {
         canSlideBool = true;
         isSliding = false;
+    }
+
+    public void StopMovements()
+    {
+        stopMovementBool = true;
+        Invoke("ActivateMovements", 1.0f);
+    }
+
+    private void ActivateMovements()
+    {
+        stopMovementBool = false;
     }
 }
