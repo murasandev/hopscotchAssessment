@@ -5,7 +5,6 @@ using UnityEngine;
 public class RockController : MonoBehaviour
 {
     public Transform playerGO;
-    public BoxCollider boxCollider;
 
     private float minX = -1f, maxX = 3.3f, xPos;
     private float offScreenOffset = 25.0f;
@@ -20,7 +19,6 @@ public class RockController : MonoBehaviour
     void Update()
     {
         DisableRock();
-        DisableCollider();
     }
     void RandomX()
     {
@@ -32,14 +30,6 @@ public class RockController : MonoBehaviour
         if (transform.position.z >= disableDistance)
         {
             this.gameObject.SetActive(false);
-        }
-    }
-    void DisableCollider()
-    {
-        //if player gets squished between obstacle and back constraint
-        if (transform.position.z >= 2f)
-        {
-            boxCollider.isTrigger = true;
         }
     }
 }
