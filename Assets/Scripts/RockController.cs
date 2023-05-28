@@ -24,6 +24,7 @@ public class RockController : MonoBehaviour
     }
     void RandomX()
     {
+        //get random x pos when enabling rock obstacle
         xPos = Random.Range(minX, maxX);
     }
     void DisableRock()

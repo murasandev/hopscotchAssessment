@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActivateBombBarrage : MonoBehaviour
 {
     public GameObject bombGO;
-    public bool fire;
+
     private float barrageDuration = 1.5f;
     private float barrageSpeed = .25f;
     private float barrageStartTime = 0f;
