@@ -20,7 +20,11 @@ public class DeactivateExplosion : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= timeToActive)
         {
-            DeactiveBombParentCS.StartDeactivation();
+            if (DeactiveBombParentCS != null)
+            {
+                DeactiveBombParentCS.StartDeactivation();
+            }
+
             this.gameObject.SetActive(false);
         }
     }
