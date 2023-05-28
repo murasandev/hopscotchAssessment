@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
+    public GameOver gameOverCS;
 
     public int health = 100;
     private float tickTimer;
@@ -13,10 +14,17 @@ public class HealthBar : MonoBehaviour
     public int totalDamage;
     public bool takingDamage;
 
+    private bool gameOver;
+
     private void Update()
     {
         ReduceHealth();
-        
+
+        if (health <= 0 && !gameOver)
+        {
+            GameOver();
+            gameOver = true;
+        }
     }
     public void DamageTaken(int damageTaken)
     {
@@ -37,5 +45,11 @@ public class HealthBar : MonoBehaviour
         {
             takingDamage = false;
         }
+    }
+
+    private void GameOver()
+    {
+        //Ends game in GameOver.cs
+        gameOverCS.gameOverBool = true;
     }
 }

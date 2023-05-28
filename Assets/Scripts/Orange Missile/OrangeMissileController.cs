@@ -22,7 +22,9 @@ public class OrangeMissileController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         _RB.velocity = new Vector3(0, 0, -speed);
+
     }
 
     private void OnEnable()

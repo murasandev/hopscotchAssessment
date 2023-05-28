@@ -24,6 +24,7 @@ public class PlayerMovementController : MonoBehaviour
     private float zTopConstraint = -5f;
     private float zBotConstraint = 3f;
     public bool gameOver;
+    public bool pause;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,7 @@ public class PlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!stopMovementBool)
+        if (!stopMovementBool && !gameOver && !pause)
         {
             Movement();
             Slide();
