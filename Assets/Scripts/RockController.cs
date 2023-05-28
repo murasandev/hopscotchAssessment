@@ -7,7 +7,7 @@ public class RockController : MonoBehaviour
     public Transform playerGO;
     public BoxCollider boxCollider;
 
-    private float minX = -3.0f, maxX = 7.0f, xPos;
+    private float minX = -1f, maxX = 3.3f, xPos;
     private float offScreenOffset = 25.0f;
     private float disableDistance = 10.0f;
 

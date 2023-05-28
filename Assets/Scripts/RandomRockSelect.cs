@@ -13,12 +13,6 @@ public class RandomRockSelect : MonoBehaviour
         SetRocksToFalse();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnEnable()
     {
         randomRock = Random.Range(0, rockArray.Length);

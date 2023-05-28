@@ -9,7 +9,7 @@ public class PlayerMovementController : MonoBehaviour
     private PlayerAnimations anim;
 
     public float speed;
-    private float slideCD = 1.25f;
+    private float slideCD = 1f;
     private bool canSlideBool = true;
     private bool isSliding;
 
