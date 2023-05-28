@@ -7,7 +7,7 @@ public class ActivateRockObstacle : MonoBehaviour
     public GameObject rockObstacleGO;
     public bool fire;
 
-    private float timeMin = 1f, timeMax = 3.0f, spawnTime, timer;
+    private float timeMin = 2f, timeMax = 4.0f, spawnTime, timer;
 
     private void Start()
     {
@@ -22,7 +22,6 @@ public class ActivateRockObstacle : MonoBehaviour
             timer = 0f;
             RandomTimer();
             ActivateRock();
-            Debug.Log("activate Rock");
         }
     }
 
