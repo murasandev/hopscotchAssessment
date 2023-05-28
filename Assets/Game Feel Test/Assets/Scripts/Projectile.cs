@@ -23,6 +23,7 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        this.gameObject.SetActive(false);
+
     }
 }
