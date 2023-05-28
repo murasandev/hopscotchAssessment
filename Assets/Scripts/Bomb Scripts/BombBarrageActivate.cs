@@ -7,21 +7,12 @@ public class BombBarrageActivate : MonoBehaviour
     public GameObject bombGO;
     public GameObject crosshairGO;
     public Transform playerTransform;
+    public float zBuffer = 3.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnEnable()
     {
-        transform.position = playerTransform.position;
+        //sets bomb barrage position in front of player
+        transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z - zBuffer);
         bombGO.SetActive(true);
         crosshairGO.SetActive(true);
     }

@@ -19,9 +19,9 @@ public class PlayerMovementController : MonoBehaviour
     bool jumpKeyPressed;
     #endregion
 
-    private float xConstraint = 3.0f;
-    private float zTopConstraint = -2f;
-    private float zBotConstraint = 4f;
+    private float xConstraint = 3.5f;
+    private float zTopConstraint = -5f;
+    private float zBotConstraint = 1f;
     public bool gameOver;
 
     // Start is called before the first frame update
