@@ -9,7 +9,7 @@ public class BombBarrage : MonoBehaviour
     public GameObject explosionPS;
 
     private float startHeight = 10.0f;
-    private float timeToActive = 3.0f;
+    private float timeToActive = 1.0f;
     private float timer;
     private float resetTimer = 0;
     public float gravityModifier = 1.0f;
@@ -39,6 +39,7 @@ public class BombBarrage : MonoBehaviour
 
     private void OnDisable()
     {
+        //resets bomb to original settings
         activateBool = false;
         rb.useGravity = false;
         ResetVelocity();
