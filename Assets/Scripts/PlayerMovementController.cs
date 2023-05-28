@@ -21,7 +21,7 @@ public class PlayerMovementController : MonoBehaviour
 
     private float xConstraint = 3.5f;
     private float zTopConstraint = -5f;
-    private float zBotConstraint = 1f;
+    private float zBotConstraint = 3f;
     public bool gameOver;
 
     // Start is called before the first frame update
